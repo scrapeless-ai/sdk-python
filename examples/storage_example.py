@@ -114,8 +114,8 @@ def queue_storage_example(client):
         # Create a new queue
         data = IQueueCreateParams(
             name='product-queue',
-            actorId='123',
-            runId='123',
+            actor_id='123',
+            run_id='123',
             description='Product queue'
         )
         queue = client.storage.queue.create(data)

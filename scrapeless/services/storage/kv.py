@@ -1,5 +1,5 @@
 from ..base import BaseService
-from ...types.storage import IKVNamespace, IKVItem, IKVValueData, IPagination, IPaginationParams
+from ...types.storage import IKVValueData, IPaginationParams
 from urllib.parse import urlencode
 
 class KVStorage(BaseService):

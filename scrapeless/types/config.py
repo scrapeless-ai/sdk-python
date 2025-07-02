@@ -3,10 +3,10 @@ from typing import Optional
 
 @dataclass
 class ScrapelessConfig:
-    baseApiUrl: Optional[str] = None
-    actorApiUrl: Optional[str] = None
-    storageApiUrl: Optional[str] = None
-    browserApiUrl: Optional[str] = None
-    scrapingCrawlApiUrl: Optional[str] = None
+    base_api_url: Optional[str] = None
+    actor_api_url: Optional[str] = None
+    storage_api_url: Optional[str] = None
+    browser_api_url: Optional[str] = None
+    scraping_crawl_api_url: Optional[str] = None
     apiKey: Optional[str] = None
     timeout: Optional[int] = None 

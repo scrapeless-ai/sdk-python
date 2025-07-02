@@ -1,7 +1,7 @@
 from dataclasses import asdict
 from .base import BaseService
 from ..utils.utils import sleep
-from ..types.captcha import ICreateCaptcha, ICreateCaptchaResponse, IGetCaptchaResult
+from ..types.captcha import ICreateCaptcha
 
 """
 Captcha service class for interacting with the Scrapeless Captcha API

@@ -47,9 +47,9 @@ class ObjectStorage(BaseService):
         files = {'file': open(data.file, 'rb')}
         payload = {}
         if getattr(data, 'actorId', None):
-            payload['actorId'] = data.actorId
+            payload['actorId'] = data.actor_id
         if getattr(data, 'runId', None):
-            payload['runId'] = data.runId
+            payload['runId'] = data.run_id
         return self.request(f"{self.base_path}/buckets/{bucket_id}/object", 'POST', files)
 
     def delete(self, bucket_id: str, object_id: str):

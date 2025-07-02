@@ -118,15 +118,14 @@ print(result)
 
 ```python
 from scrapeless import ScrapelessClient
+from scrapeless.types import ScrapingTaskRequest
 
 client = ScrapelessClient()
-
-result = client.scraping.scrape({
-    'actor': 'scraper.shopee',
-    'input': {
-        'url': 'https://shopee.tw/a-i.10228173.24803858474'
-    }
-})
+request = ScrapingTaskRequest(
+    actor='scraper.google.search',
+    input={'q': 'nike site:www.nike.com'}
+)
+result = client.scraping.scrape(request=request)
 print(result['data'])
 ```
 
@@ -136,15 +135,14 @@ Google SERP 数据提取 API，支持自定义参数和实时更新：
 
 ```python
 from scrapeless import ScrapelessClient
+from scrapeless.types import ScrapingTaskRequest
 
 client = ScrapelessClient()
-
-results = client.deepserp.scrape({
-    'actor': 'scraper.google.search',
-    'input': {
-        'q': 'nike site:www.nike.com'
-    }
-})
+request = ScrapingTaskRequest(
+    actor='scraper.google.search',
+    input={'q': 'nike site:www.nike.com'}
+)
+results = client.deepserp.scrape(request=request)
 print(results)
 ```
 
@@ -154,19 +152,22 @@ print(results)
 
 ```python
 from scrapeless import ScrapelessClient
+from scrapeless.types import IRunActorData, IActorRunOptions
 
 client = ScrapelessClient()
+data = IRunActorData(
+    input={ 'url': 'https://example.com' },
+    run_options=IActorRunOptions(
+        CPU=2,
+        memory=2048,
+        timeout=600,
+    )
+)
 
 # 运行一个actor
 run = client.actor.run(
     actor_id='your_actor_id',
-    input={ 'url': 'https://example.com' },
-    run_options={
-        'CPU': 2,
-        'memory': 2048,
-        'timeout': 3600,
-        'version': 'v1.0.0'
-    }
+    data=data
 )
 print('Actor运行结果:', run)
 ```

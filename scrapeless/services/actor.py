@@ -35,7 +35,7 @@ class ActorService(BaseService):
     def get_run_list(self, params: IPaginationParams):
         query = {
             'page': params.page,
-            'pageSize': params.pageSize
+            'pageSize': params.page_size
         }
         if getattr(params, 'desc', None) is not None:
             query['desc'] = '1' if params.desc else '0'

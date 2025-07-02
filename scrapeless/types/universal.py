@@ -49,7 +49,7 @@ class UniversalWebUnlockerInput:
 class UniversalAkamaiWebCookieInput:
     type: str
     url: str
-    userAgent: str
+    user_agent: str
 
 @dataclass
 class UniversalAkamaiWebSensorInput:

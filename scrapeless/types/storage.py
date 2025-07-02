@@ -83,14 +83,14 @@ class IObjectCreateParams:
 @dataclass
 class IObjectUploadParams:
     file: str
-    actorId: Optional[str] = None
-    runId: Optional[str] = None
+    actor_id: Optional[str] = None
+    run_id: Optional[str] = None
 
 @dataclass
 class IQueueCreateParams:
     name: str
-    actorId: str
-    runId: str
+    actor_id: str
+    run_id: str
     description: Optional[str] = None
 
 @dataclass

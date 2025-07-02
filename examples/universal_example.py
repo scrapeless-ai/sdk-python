@@ -7,9 +7,6 @@ from scrapeless.types import (
     UniversalScrapingRequest,
     UniversalJsRenderInput,
     UniversalWebUnlockerInput,
-    UniversalAkamaiWebCookieInput,
-    UniversalAkamaiWebSensorInput,
-    UniversalProxy
 )
 
 log = Logger().with_prefix('universal-example')

@@ -1,4 +1,4 @@
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from typing import Optional, Any, Dict, List, TypeVar, Generic
 from datetime import datetime
 
@@ -10,7 +10,6 @@ class ActorRunOptions:
     CPU: Optional[int] = None
     memory: Optional[int] = None
     timeout: Optional[int] = None
-    version: Optional[str] = None
 
 """
 Actor creation data
@@ -72,9 +71,8 @@ class IActorRunOptions:
     CPU: Optional[int] = None
     memory: Optional[int] = None
     timeout: Optional[int] = None
-    version: Optional[str] = None
 
 @dataclass
 class IRunActorData(Generic[T]):
     input: T
-    runOptions: IActorRunOptions 
+    run_options: IActorRunOptions
