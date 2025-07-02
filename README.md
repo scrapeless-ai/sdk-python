@@ -1,4 +1,4 @@
-# Scrapeless Node SDK
+# Scrapeless Python SDK
 
 The official Python SDK for [Scrapeless AI](https://scrapeless.com) - End-to-End Data Infrastructure for AI Developers & Enterprises.
 
