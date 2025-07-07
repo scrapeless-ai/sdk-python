@@ -3,7 +3,7 @@ from .browser import BrowserService
 from .deepserp import DeepSerpService
 from .proxies import ProxiesService
 from .scraping import ScrapingService
-from .storage.index import StorageService
+from .storage import StorageService
 from .universal import UniversalService
 from .crawl.index import ScrapingCrawlService
 from .captcha import CaptchaService
