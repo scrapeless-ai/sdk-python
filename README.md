@@ -223,7 +223,7 @@ Check out the [`examples`](./examples) directory for comprehensive usage example
 
 - [Browser](./examples/browser_example.py)
 - [Playwright Integration](./examples/playwright_example.py)
-- [Puppeteer Integration](./examples/puppeteer_example.py)
+- [Pyppeteer Integration](./examples/pyppeteer_example.py)
 - [Scraping API](./examples/scraping_example.py)
 - [Actor](./examples/actor_example.py)
 - [Storage Usage](./examples/storage_example.py)

@@ -1,27 +1,27 @@
 """
-Example: Using Scrapeless SDK's Puppeteer Integration
+Example: Using Scrapeless SDK's Pyppeteer Integration
 
-This example demonstrates how to use the Puppeteer class for browser automation
+This example demonstrates how to use the Pyppeteer class for browser automation
 including page navigation and extended CDP session methods.
 NOTE: You need to have `pyppeteer` installed to run this example.
 """
 from scrapeless import Logger
-from scrapeless.scraping_browser import ScrapelessPuppeteer as Puppeteer
-from scrapeless.types import PuppeteerLaunchOptions
+from scrapeless.scraping_browser import ScrapelessPyppeteer as Pyppeteer
+from scrapeless.types import PyppeteerLaunchOptions
 from time import sleep
 
-def puppeteer_example() -> None:
+def pyppeteer_example() -> None:
     """
-    Main function to demonstrate Puppeteer browser automation synchronously.
+    Main function to demonstrate Pyppeteer browser automation synchronously.
     """
     import asyncio
-    logger = Logger().with_prefix('puppeteer-example')
+    logger = Logger().with_prefix('pyppeteer-example')
     async def _run() -> None:
         logger.debug('Starting browser...')
-        client = Puppeteer()
+        client = Pyppeteer()
         # Launch browser instance
-        config = PuppeteerLaunchOptions(
-            session_name='sdk-puppeteer-example',
+        config = PyppeteerLaunchOptions(
+            session_name='sdk-pyppeteer-example',
             session_ttl=180,
             proxy_country='US',
             session_recording=True,
@@ -34,9 +34,9 @@ def puppeteer_example() -> None:
             page = await browser.newPage()
             logger.debug('Creating CDP session with extended methods...')
             await page.goto('https://www.google.com/', {'waitUntil': 'networkidle0'})
-            # Use Puppeteer instance to create CDP session
+            # Use Pyppeteer instance to create CDP session
 
-            cdp_session = await client.create_puppeteer_cdp_session(page)
+            cdp_session = await client.create_pyppeteer_cdp_session(page)
             await cdp_session.disable_captcha_auto_solve()
             await page.goto('https://prenotami.esteri.it/')
             email = 'xxxxxxx@gmail.com'
@@ -65,9 +65,9 @@ def puppeteer_example() -> None:
 
 def run_example() -> None:
     """
-    Main entry for running the Puppeteer example.
+    Main entry for running the Pyppeteer example.
     """
-    puppeteer_example()
-    print('Puppeteer example completed.')
+    pyppeteer_example()
+    print('Pyppeteer example completed.')
 
 run_example() 

@@ -29,10 +29,10 @@ class BaseLaunchOptions(ICreateBrowser):
     defaultViewport: Optional[Any] = None
 
 """
-Puppeteer specific launch options
+Pyppeteer specific launch options
 """
 @dataclass
-class PuppeteerLaunchOptions(BaseLaunchOptions):
+class PyppeteerLaunchOptions(BaseLaunchOptions):
     defaultViewport: Optional[Any] = None
 
 """

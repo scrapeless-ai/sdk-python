@@ -30,8 +30,8 @@ class BaseBrowser(ABC):
         if config is None:
             config = ScrapelessConfig()
 
-        api_key = config.apiKey or get_env('SCRAPELESS_API_KEY')
-        browser_url = config.baseApiUrl or get_env_with_default('SCRAPELESS_BROWSER_API_URL', 'https://browser.scrapeless.com')
+        api_key = config.api_key or get_env('SCRAPELESS_API_KEY')
+        browser_url = config.base_api_url or get_env_with_default('SCRAPELESS_BROWSER_API_URL', 'https://browser.scrapeless.com')
         
         timeout = config.timeout if config.timeout is not None else 30000
         self.browser_service = BrowserService(api_key, browser_url, timeout) 

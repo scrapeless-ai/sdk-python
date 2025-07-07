@@ -2,7 +2,7 @@ from typing import Optional, Union, Any, Dict
 from pyppeteer import connect, browser, page
 from .base import BaseBrowser, create_logger
 from ..types.browser import (
-    PuppeteerLaunchOptions,
+    PyppeteerLaunchOptions,
     CaptchaCDPResponse,
     LiveURLResponse,
     SetAutoSolveOptions,
@@ -12,18 +12,18 @@ from ..types.browser import (
 from ..types.config import ScrapelessConfig
 import asyncio
 
-logger = create_logger('Puppeteer')
+logger = create_logger('Pyppeteer')
 
-class ScrapelessPuppeteer(BaseBrowser):
+class ScrapelessPyppeteer(BaseBrowser):
     """
-    Enhanced Scrapeless Puppeteer browser implementation using Scrapeless API
+    Enhanced Scrapeless Pyppeteer browser implementation using Scrapeless API
     """
     def __init__(self):
         super().__init__()
 
-    async def connect(self, config: Optional[Union[PuppeteerLaunchOptions, ScrapelessConfig]] = None) -> browser:
+    async def connect(self, config: Optional[Union[PyppeteerLaunchOptions, ScrapelessConfig]] = None) -> browser:
         if config is None:
-            config = PuppeteerLaunchOptions()
+            config = PyppeteerLaunchOptions()
         config_for_init = config if isinstance(config, ScrapelessConfig) or config is None else None
         self._init_browser_service(config_for_init)
         browser_url = self.browser_service.create(config).browser_ws_endpoint
@@ -31,7 +31,7 @@ class ScrapelessPuppeteer(BaseBrowser):
         return handle_browser
 
     @staticmethod
-    async def create_puppeteer_cdp_session(handle_page: page) -> Any:
+    async def create_pyppeteer_cdp_session(handle_page: page) -> Any:
         """
         Create a Scrapeless-enhanced CDP session with custom automation methods
         """
@@ -145,4 +145,4 @@ class ScrapelessPuppeteer(BaseBrowser):
         return ScrapelessCDPSession(cdp_session, handle_page)
 
 # Singleton instance for convenient access
-Puppeteer = ScrapelessPuppeteer() 
+Pyppeteer = ScrapelessPyppeteer()

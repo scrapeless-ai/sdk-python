@@ -1,7 +1,7 @@
-from .puppeteer import ScrapelessPuppeteer
+from .pyppeteer import ScrapelessPyppeteer
 from .playwright import ScrapelessPlaywright
 
 __all__ = [
-    'ScrapelessPuppeteer',
+    'ScrapelessPyppeteer',
     'ScrapelessPlaywright',
 ]
