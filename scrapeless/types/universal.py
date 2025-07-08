@@ -60,5 +60,5 @@ class UniversalAkamaiWebSensorInput:
 
 @dataclass
 class UniversalConfig:
-    apiKey: Optional[str] = None
+    api_key: Optional[str] = None
     timeout: Optional[int] = None 

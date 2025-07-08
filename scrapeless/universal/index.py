@@ -18,7 +18,7 @@ class Universal:
     def __init__(self, config: Optional[UniversalConfig] = None):
         if config is None:
             config = UniversalConfig()
-        self.api_key = config.apiKey or get_env('SCRAPELESS_API_KEY')
+        self.api_key = config.api_key or get_env('SCRAPELESS_API_KEY')
         self.base_api_url = get_env_with_default('SCRAPELESS_BASE_API_URL', 'https://api.scrapeless.com')
         self.timeout = config.timeout or 30000
         self.universal_service = UniversalService(self.api_key, self.base_api_url, self.timeout)

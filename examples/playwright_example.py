@@ -36,32 +36,18 @@ def playwright_example() -> None:
             await cdp_session.disable_captcha_auto_solve()
             # Navigate to target website
             logger.debug('Navigating to target website...')
-            await page.goto('https://prenotami.esteri.it/')
-            # Wait for page to load
-            await page.wait_for_load_state('networkidle')
             live_url = await cdp_session.live_url()
             if live_url.error:
                 logger.error(f'Failed to get current page URL: {live_url.error}')
             else:
                 logger.info(f'Current page URL: {live_url}')
-            email = 'xxx.mel@yqdfw.org'
-            password = 'xxx*'
-            await page.wait_for_selector('#login-email')
-            await page.wait_for_selector('#login-password')
-            sleep(10_000)
-            await cdp_session.real_fill('#login-email', email)
-            await cdp_session.real_fill('#login-password', password)
+            sleep(10)
+            await cdp_session.real_fill('textarea[name=q]', 'scrapeless')
+            await page.screenshot(path='./tmp/screenshot.png')
             # Wait to observe the result
-            sleep(5_000)
-            logger.debug('Solving captcha...')
-            captcha = await cdp_session.solve_captcha()
-            if captcha['success']:
-                logger.info(f'Captcha detected: {captcha}')
-            else:
-                logger.error(f"Failed to detect captcha: {captcha['message']}")
-                return
+            sleep(5)
             # await cdp_session.real_click('button[type="submit"]')
-            sleep(10_000)
+            sleep(10)
         except Exception as error:
             print(f'Error running example: {error}')
         finally:

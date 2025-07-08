@@ -37,7 +37,7 @@ pip install scrapeless
 
 ### Prerequisite
 
-[Log in](https://app.dashboard.scrapeless.com) to the Scrapeless Dashboard and get the API Key
+[Log in](https://app.scrapeless.com) to the Scrapeless Dashboard and get the API Key
 
 ### Basic Setup
 
@@ -238,7 +238,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - 📖 **Documentation**: [https://docs.scrapeless.com](https://docs.scrapeless.com)
 - 💬 **Community**: [Join our Discord](https://backend.scrapeless.com/app/api/v1/public/links/discord)
-- 🐛 **Issues**: [GitHub Issues](https://github.com/scrapeless-ai/sdk-node/issues)
+- 🐛 **Issues**: [GitHub Issues](https://github.com/scrapeless-ai/sdk-python/issues)
 - 📧 **Email**: [support@scrapeless.com](mailto:support@scrapeless.com)
 
 ## 🏢 About Scrapeless

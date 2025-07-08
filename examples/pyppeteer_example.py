@@ -38,23 +38,14 @@ def pyppeteer_example() -> None:
 
             cdp_session = await client.create_pyppeteer_cdp_session(page)
             await cdp_session.disable_captcha_auto_solve()
-            await page.goto('https://prenotami.esteri.it/')
-            email = 'xxxxxxx@gmail.com'
-            password = 'xxxx'
-            sleep(10_000)
+
+            sleep(10)
             logger.debug('Filling form using CDP methods...')
-            await cdp_session.real_fill('#login-email', email)
-            await cdp_session.real_fill('#login-password', password)
-            sleep(5_000)
-            logger.debug('Solving captcha...')
-            captcha = await cdp_session.solve_captcha()
-            if captcha['success']:
-                logger.info(f'Captcha detected: {captcha}')
-            else:
-                logger.error(f"Failed to detect captcha: {captcha['message']}")
-                return
+            await cdp_session.real_fill('textarea[name=q]', 'scrapeless')
+            sleep(5)
+            await page.screenshot(path='./tmp/screenshot.png')
             # await cdp_session.real_click('button[type="submit"]')
-            sleep(10_000)
+            sleep(10)
         except Exception as error:
             print(f'Error running example: {error}')
         finally:

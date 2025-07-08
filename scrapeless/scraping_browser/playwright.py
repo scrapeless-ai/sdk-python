@@ -107,30 +107,6 @@ class ScrapelessPlaywright(BaseBrowser):
                     logger.error('Error in solveCaptcha', {'options': options, 'error': str(e)})
                     raise RuntimeError(f'Failed to solve captcha: {str(e)}')
 
-            async def wait_captcha_detected(self, options: Dict[str, Any] = None) -> CaptchaCDPResponse:
-                timeout = 30000
-                if options and 'timeout' in options:
-                    timeout = options['timeout']
-                logger.debug(f'Waiting for captcha detected with timeout: {timeout}ms')
-                try:
-                    await asyncio.sleep(timeout / 1000)
-                    return CaptchaCDPResponse(success=False, message='Timeout waiting for captcha detected')
-                except Exception as e:
-                    logger.error('Error in waitCaptchaDetected', {'error': str(e)})
-                    raise RuntimeError(f'Failed to wait for captcha detected: {str(e)}')
-
-            async def wait_captcha_solved(self, options: Dict[str, Any] = None) -> CaptchaCDPResponse:
-                timeout = 30000
-                if options and 'timeout' in options:
-                    timeout = options['timeout']
-                logger.debug(f'Waiting for captcha solved with timeout: {timeout}ms')
-                try:
-                    await asyncio.sleep(timeout / 1000)
-                    return CaptchaCDPResponse(success=False, message='Timeout waiting for captcha solved')
-                except Exception as e:
-                    logger.error('Error in waitCaptchaSolved', {'error': str(e)})
-                    raise RuntimeError(f'Failed to wait for captcha solved: {str(e)}')
-
             async def image_to_text(self, params: ImageToTextOptions) -> None:
                 timeout = params.timeout if params.timeout is not None else 30000
                 logger.debug(f'Waiting for captcha solved with timeout: {timeout}ms')
