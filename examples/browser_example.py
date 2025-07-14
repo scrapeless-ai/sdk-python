@@ -2,8 +2,10 @@
 Example: Demonstrating how to use the Scrapeless SDK browser module
 Filename: browser-example.py
 """
+from typing import Any, Coroutine
+
 from scrapeless import Scrapeless
-from scrapeless.types import ICreateBrowser
+from scrapeless.types import ICreateBrowser, ICreateBrowserResponse
 import pyppeteer
 
 def browser_example() -> None:
@@ -23,9 +25,9 @@ def browser_example() -> None:
                 proxy_country='US',
                 session_recording=True
             )
-            session = client.browser.create(config).__dict__
-            browser_ws_endpoint = session['browser_ws_endpoint']
-            print('Browser WebSocket endpoint created:', browser_ws_endpoint)
+            session = await client.browser.create_session(config)
+            browser_ws_endpoint = session.browser_ws_endpoint
+            print('Browser WebSocket endpoint created:', session)
             # Connect to browser using pyppeteer
             browser = await pyppeteer.connect({ 'browserWSEndpoint': browser_ws_endpoint })
             # Open new page and navigate to website
