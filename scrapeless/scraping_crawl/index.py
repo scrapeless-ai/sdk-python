@@ -10,7 +10,7 @@ class ScrapingCrawl:
     def __init__(self, config: dict):
         api_key = config.get('api_key') or get_env('SCRAPELESS_API_KEY')
         base_url = config.get('base_url') or get_env_with_default('SCRAPELESS_CRAWL_API_URL', 'https://api.scrapeless.com')
-        timeout = config.get('timeout') or 0
+        timeout = config.get('timeout') or 30000
         self.service = ScrapingCrawlService(api_key, base_url, timeout)
 
     def scrape_url(self, url: str, params: Optional[ScrapeParams] = None):

@@ -39,4 +39,4 @@ class Scrapeless:
         self.universal = UniversalService(api_key, base_api_url, timeout)
         self.proxies = ProxiesService(api_key, base_api_url, timeout)
         # self.captcha = CaptchaService(api_key, base_api_url, timeout)
-        self.scraping_crawl = ScrapingCrawlService(api_key, scraping_crawl_url, config.get('timeout', 0))
+        self.scraping_crawl = ScrapingCrawlService(api_key, scraping_crawl_url, timeout)

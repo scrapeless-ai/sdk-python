@@ -5,6 +5,7 @@ This example demonstrates how to use the ScrapingCrawl SDK for scraping, crawlin
 import asyncio
 import json
 from scrapeless import ScrapingCrawl
+from scrapeless.types import ScrapeParams
 
 def save_object_to_json(obj, filename):
     """
@@ -40,13 +41,17 @@ async def example_batch_scrape():
     """
     Example: Scrape a single URL and save the result.
     """
+    params = ScrapeParams(
+        formats=['markdown'],
+        headers=None,
+        includeTags=None,
+        excludeTags=None,
+        onlyMainContent=True,
+        waitFor=0,
+        timeout=30000
+    )
     try:
-        scrape_response = await client.batch_scrape_urls(['https://example.com/', 'https://example.com/'], {
-            'formats': ['markdown', 'html', 'links', 'screenshot@fullPage'],
-            'browserOptions': {
-                'session_name': 'scrapingCrawl_batchScrape'
-            }
-        })
+        scrape_response = await client.batch_scrape_urls(['https://example.com/', 'https://example.com/'], params=params)
         if scrape_response:
             print(scrape_response)
     except Exception as error:
@@ -75,11 +80,11 @@ async def run_examples():
     Run all ScrapingCrawl examples sequentially.
     """
     print('=== Scrapeless ScrapingCrawl Service Examples ===\n')
-    await example_scrape()
+    # await example_scrape()
     print('\n')
     await example_batch_scrape()
     print('\n')
-    await example_crawl()
+    # await example_crawl()
     print('\n')
     print('🎉 All examples completed')
 
