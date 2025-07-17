@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.scrapeless/scrapeless-ai/sdk-python/compare/v1.1.1...v1.2.0) (2025-07-17)
+
+
+### Features
+
+* **profile:** browser profile module ([f4a39ba](https://github.scrapeless/scrapeless-ai/sdk-python/commit/f4a39ba126fc88bfd0b6fd8ff126cc6f9130b0da))
+
 ### [1.1.1](https://github.scrapeless/scrapeless-ai/sdk-python/compare/v1.1.0...v1.1.1) (2025-07-16)
 
 
