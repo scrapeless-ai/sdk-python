@@ -49,6 +49,9 @@ os.makedirs(LOG_ROOT_DIR, exist_ok=True)
 # Logger factory
 class Logger:
     def __init__(self, prefix: Optional[str] = None):
+        disable_log = os.getenv('SCRAPELESS_LOG_DISABLED')
+        if disable_log == 'true':
+            logging.disable(logging.CRITICAL)
         self.prefix = prefix or ''
         self.logger = logging.getLogger(prefix or 'scrapeless')
         if not self.logger.handlers:

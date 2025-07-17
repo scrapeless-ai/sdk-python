@@ -1,3 +1,5 @@
+import json
+
 import requests
 from typing import Optional, Dict, Any
 from ..error import ScrapelessError

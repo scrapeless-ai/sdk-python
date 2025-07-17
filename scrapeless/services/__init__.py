@@ -7,6 +7,7 @@ from .storage import StorageService
 from .universal import UniversalService
 from .crawl import ScrapingCrawlService
 from .captcha import CaptchaService
+from .profiles import ProfilesService
 
 __all__ = [
     'ActorService',
@@ -17,5 +18,6 @@ __all__ = [
     'StorageService',
     'UniversalService',
     'ScrapingCrawlService',
-    'CaptchaService'
+    'CaptchaService',
+    'ProfilesService',
 ]

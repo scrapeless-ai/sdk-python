@@ -31,4 +31,4 @@ class ScrapingService(BaseService):
             sleep(1000)
             result = self.get_task_result(response['data']['taskId'])
             if result['status'] == 200:
-                return result['data'] 
+                return result['data']
