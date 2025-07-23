@@ -6,7 +6,7 @@ from urllib.parse import urlencode
 ProfileService for use browser profile
 """
 class ProfilesService(BaseService):
-    base_path = '/api/v1/profiles'
+    base_path = '/browser/profiles'
 
     def __init__(self, api_key: str, base_url: str, timeout: int):
         super().__init__(api_key, base_url, timeout)
