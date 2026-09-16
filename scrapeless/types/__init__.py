@@ -12,3 +12,4 @@ from .scraping_crawl import *
 from .storage import *
 from .universal import *
 from .profile import *
+from .ai_scraper import *

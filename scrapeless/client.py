@@ -9,7 +9,8 @@ from .services import (
     ActorService,
     StorageService,
     ScrapingCrawlService,
-    ProfilesService
+    ProfilesService,
+    AIScraperService
     # CaptchaService,
 )
 from .env import get_env, get_env_with_default
@@ -42,3 +43,4 @@ class Scrapeless:
         # self.captcha = CaptchaService(api_key, base_api_url, timeout)
         self.scraping_crawl = ScrapingCrawlService(api_key, scraping_crawl_url, timeout)
         self.profiles = ProfilesService(api_key, base_api_url, timeout)
+        self.ai_scraper = AIScraperService(api_key, base_api_url, timeout)

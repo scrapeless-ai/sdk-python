@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/scrapeless-ai/sdk-python/compare/v1.2.0...v1.3.0) (2026-09-16)
+
+
+### Features
+
+* 🎸 Add ai scraper ([e02edbd](https://github.com/scrapeless-ai/sdk-python/commit/e02edbdf5a16347534e77332da0521e54a2ef97e))
+
+
+### Bug Fixes
+
+* **profile:** fix gateway address ([9461522](https://github.com/scrapeless-ai/sdk-python/commit/94615229682b3c901653fd2362c04553b6cdae8b))
+
 ## [1.2.0](https://github.scrapeless/scrapeless-ai/sdk-python/compare/v1.1.1...v1.2.0) (2025-07-17)
 
 

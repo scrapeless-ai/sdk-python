@@ -8,6 +8,7 @@ from .universal import UniversalService
 from .crawl import ScrapingCrawlService
 from .captcha import CaptchaService
 from .profiles import ProfilesService
+from .ai_scraper import AIScraperService
 
 __all__ = [
     'ActorService',
@@ -20,4 +21,5 @@ __all__ = [
     'ScrapingCrawlService',
     'CaptchaService',
     'ProfilesService',
+    'AIScraperService',
 ]
